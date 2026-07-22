@@ -26,23 +26,23 @@
     // Keyed by the Chinese label in mkdocs.yml; values per target language.
     // When on a non-default language, sidebar text is replaced from this map.
     var NAV_I18N = {
-      "首页":         { en: "Home",           ta: "முகப்பு",       vi: "Trang chủ",     zhtw: "首頁" },
-      "引言":         { en: "Introduction",   ta: "அறிமுகம்",      vi: "Giới thiệu",    zhtw: "引言" },
-      "第1章 Agent基础知识": { en: "Chapter 1 · Agent Basics",          ta: "அதி. 1 · AI ஏஜெண்ட் அடிப்படைகள்",     vi: "Chương 1 · Nền tảng AI Agent", zhtw: "第 1 章 · Agent 基礎知識" },
-      "第2章 上下文工程":     { en: "Chapter 2 · Context Engineering",   ta: "அதி. 2 · சூழல் பொறியியல்",          vi: "Chương 2 · Kỹ thuật ngữ cảnh", zhtw: "第 2 章 · 上下文工程" },
-      "第3章 用户记忆和知识库": { en: "Chapter 3 · User Memory & Knowledge Base", ta: "அதி. 3 · பயனர் நினைவகம் & அறிவுத்தளம்", vi: "Chương 3 · Bộ nhớ & Cơ sở kiến thức", zhtw: "第 3 章 · 使用者記憶和知識庫" },
-      "第4章 工具":           { en: "Chapter 4 · Tools",                 ta: "அதி. 4 · கருவிகள்",                vi: "Chương 4 · Công cụ",          zhtw: "第 4 章 · 工具" },
-      "第5章 CodingAgent与代码生成": { en: "Chapter 5 · Coding Agent & Code Generation", ta: "அதி. 5 · குறியீட்டு ஏஜெண்ட் & குறியீடு உருவாக்கம்", vi: "Chương 5 · Coding Agent & Tạo mã", zhtw: "第 5 章 · Coding Agent 與程式碼生成" },
-      "第6章 Agent的评估":    { en: "Chapter 6 · Evaluating Agents",     ta: "அதி. 6 · ஏஜெண்ட் மதிப்பீடு",        vi: "Chương 6 · Đánh giá Agent",   zhtw: "第 6 章 · Agent 的評估" },
-      "第7章 模型后训练":     { en: "Chapter 7 · Model Post-Training",   ta: "அதி. 7 · மாதிரி பிந்தைய பயிற்சி",   vi: "Chương 7 · Post-training mô hình", zhtw: "第 7 章 · 模型後訓練" },
-      "第8章 Agent的自我进化": { en: "Chapter 8 · Agent Self-Evolution",  ta: "அதி. 8 · ஏஜெண்ட் சுய-பரிணாமம்",     vi: "Chương 8 · Tự tiến hóa của Agent", zhtw: "第 8 章 · Agent 的自我進化" },
-      "第9章 多模态与实时交互": { en: "Chapter 9 · Multimodal & Real-Time", ta: "அதி. 9 · பல்முக & நிகழ்நேரம்",       vi: "Chương 9 · Đa phương thức & Thời gian thực", zhtw: "第 9 章 · 多模態與即時互動" },
-      "第10章 多Agent协作":   { en: "Chapter 10 · Multi-Agent Collaboration", ta: "அதி. 10 · பல-ஏஜெண்ட் ஒத்துழைப்பு", vi: "Chương 10 · Đa Agent cộng tác", zhtw: "第 10 章 · 多 Agent 協作" },
-      "后记":         { en: "Afterword",       ta: "பின்னுரை",       vi: "Lời bạt",         zhtw: "後記" },
-      "思考题参考答案": { en: "Reference Answers", ta: "பதில் வழிகாட்டி", vi: "Đáp án tham khảo", zhtw: "思考題參考答案" },
+      "首页":         { en: "Home",           ta: "முகப்பு",       vi: "Trang chủ",     zhtw: "首頁", ko: "홈" },
+      "引言":         { en: "Introduction",   ta: "அறிமுகம்",      vi: "Giới thiệu",    zhtw: "引言", ko: "서문" },
+      "第1章 Agent基础知识": { en: "Chapter 1 · Agent Basics",          ta: "அதி. 1 · AI ஏஜெண்ட் அடிப்படைகள்",     vi: "Chương 1 · Nền tảng AI Agent", zhtw: "第 1 章 · Agent 基礎知識", ko: "제1장 · Agent 기초" },
+      "第2章 上下文工程":     { en: "Chapter 2 · Context Engineering",   ta: "அதி. 2 · சூழல் பொறியியல்",          vi: "Chương 2 · Kỹ thuật ngữ cảnh", zhtw: "第 2 章 · 上下文工程", ko: "제2장 · 컨텍스트 엔지니어링" },
+      "第3章 用户记忆和知识库": { en: "Chapter 3 · User Memory & Knowledge Base", ta: "அதி. 3 · பயனர் நினைவகம் & அறிவுத்தளம்", vi: "Chương 3 · Bộ nhớ & Cơ sở kiến thức", zhtw: "第 3 章 · 使用者記憶和知識庫", ko: "제3장 · 사용자 메모리와 지식베이스" },
+      "第4章 工具":           { en: "Chapter 4 · Tools",                 ta: "அதி. 4 · கருவிகள்",                vi: "Chương 4 · Công cụ",          zhtw: "第 4 章 · 工具", ko: "제4장 · 도구" },
+      "第5章 CodingAgent与代码生成": { en: "Chapter 5 · Coding Agent & Code Generation", ta: "அதி. 5 · குறியீட்டு ஏஜெண்ட் & குறியீடு உருவாக்கம்", vi: "Chương 5 · Coding Agent & Tạo mã", zhtw: "第 5 章 · Coding Agent 與程式碼生成", ko: "제5장 · Coding Agent와 코드 생성" },
+      "第6章 Agent的评估":    { en: "Chapter 6 · Evaluating Agents",     ta: "அதி. 6 · ஏஜெண்ட் மதிப்பீடு",        vi: "Chương 6 · Đánh giá Agent",   zhtw: "第 6 章 · Agent 的評估", ko: "제6장 · Agent 평가" },
+      "第7章 模型后训练":     { en: "Chapter 7 · Model Post-Training",   ta: "அதி. 7 · மாதிரி பிந்தைய பயிற்சி",   vi: "Chương 7 · Post-training mô hình", zhtw: "第 7 章 · 模型後訓練", ko: "제7장 · 모델 후속 훈련" },
+      "第8章 Agent的自我进化": { en: "Chapter 8 · Agent Self-Evolution",  ta: "அதி. 8 · ஏஜெண்ட் சுய-பரிணாமம்",     vi: "Chương 8 · Tự tiến hóa của Agent", zhtw: "第 8 章 · Agent 的自我進化", ko: "제8장 · Agent의 자기 진화" },
+      "第9章 多模态与实时交互": { en: "Chapter 9 · Multimodal & Real-Time", ta: "அதி. 9 · பல்முக & நிகழ்நேரம்",       vi: "Chương 9 · Đa phương thức & Thời gian thực", zhtw: "第 9 章 · 多模態與即時互動", ko: "제9장 · 멀티모달과 실시간 상호작용" },
+      "第10章 多Agent协作":   { en: "Chapter 10 · Multi-Agent Collaboration", ta: "அதி. 10 · பல-ஏஜெண்ட் ஒத்துழைப்பு", vi: "Chương 10 · Đa Agent cộng tác", zhtw: "第 10 章 · 多 Agent 協作", ko: "제10장 · 멀티 Agent 협업" },
+      "后记":         { en: "Afterword",       ta: "பின்னுரை",       vi: "Lời bạt",         zhtw: "後記", ko: "후기" },
+      "思考题参考答案": { en: "Reference Answers", ta: "பதில் வழிகாட்டி", vi: "Đáp án tham khảo", zhtw: "思考題參考答案", ko: "생각해 볼 문제 참고 답안" },
       // Nested sub-entries (chapter prose + experiments).
-      "正文":         { en: "Prose",          ta: "உரை",          vi: "Nội dung",     zhtw: "正文" },
-      "配套实验":     { en: "Experiments",    ta: "சோதனைகள்",     vi: "Thí nghiệm",   zhtw: "配套實驗" },
+      "正文":         { en: "Prose",          ta: "உரை",          vi: "Nội dung",     zhtw: "正文", ko: "본문" },
+      "配套实验":     { en: "Experiments",    ta: "சோதனைகள்",     vi: "Thí nghiệm",   zhtw: "配套實驗", ko: "실습" },
     };
 
     var SEARCH_STRINGS = {
@@ -51,6 +51,7 @@
       zhtw: { placeholder: "搜尋",   searching: "正在初始化搜尋引擎", input: "鍵入進行檢索" },
       ta:   { placeholder: "தேடு",   searching: "தேடல் தொடங்கப்படுகிறது", input: "தட்டச்சு செய்து தேடவும்" },
       vi:   { placeholder: "Tìm kiếm", searching: "Đang khởi tạo",     input: "Gõ để tìm kiếm" },
+      ko:   { placeholder: "검색",   searching: "검색 엔진 초기화 중", input: "입력하여 검색" },
     };
 
     // ── helpers ───────────────────────────────────────────────
@@ -152,7 +153,7 @@
       var p = location.pathname;
       var idx = Math.max(p.indexOf("book-en/"), p.indexOf("book-ta/"),
                          p.indexOf("book-vi/"), p.indexOf("book-zhtw/"),
-                         p.indexOf("book/"));
+                         p.indexOf("book-ko/"), p.indexOf("book/"));
       if (idx === -1) return "/";
       return p.slice(0, idx);
     }
