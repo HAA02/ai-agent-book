@@ -1,0 +1,37 @@
+% ===== Korean script support for the Korean edition =====
+% Included AFTER preamble.tex (see build_pdf.sh). ElegantBook has no Korean
+% language option, so the class runs in `lang=en` (English theorem names,
+% "Chapter"/"Contents" labels). Korean rendering is purely a font concern:
+% the body/heading Latin fonts do not cover the Hangul blocks, and Noto
+% Serif CJK KR does not cover Latin — so we keep the book's default
+% Latin/CJK/symbol fonts and route ONLY Hangul codepoints to Noto Serif CJK KR.
+%
+% ucharclasses inserts the begin/end code at every entry/exit of a Hangul run.
+% Wrapping in \begingroup…\endgroup means the exact surrounding style (bold in
+% headings, monospace in code) is restored for whatever follows a Hangul run.
+\usepackage{ucharclasses}
+
+% Hangul Syllables (AC00–D7A3)
+\IfFontExistsTF{Noto Serif CJK KR}{%
+  \newfontfamily\hangulfont{Noto Serif CJK KR}%
+  \setTransitionsFor{HangulSyllables}{\begingroup\hangulfont}{\endgroup}%
+}{%
+  \PackageWarning{korean-fonts}{Noto Serif CJK KR not found; Hangul Syllables will not render.}%
+}
+
+% Hangul Jamo (1100–11FF)
+\IfFontExistsTF{Noto Serif CJK KR}{%
+  \setTransitionsFor{HangulJamo}{\begingroup\hangulfont}{\endgroup}%
+}{}
+
+% Hangul Compatibility Jamo (3130–318F)
+\IfFontExistsTF{Noto Serif CJK KR}{%
+  \setTransitionsFor{HangulCompatibilityJamo}{\begingroup\hangulfont}{\endgroup}%
+}{}
+
+% Fixed-width Hangul for code blocks, if ever needed inline.
+\IfFontExistsTF{Noto Sans Mono CJK KR}{%
+  \newfontfamily\hangulmonofont{Noto Sans Mono CJK KR}%
+}{%
+  \PackageWarning{korean-fonts}{Noto Sans Mono CJK KR not found; falling back to \string\hangulfont\space for monospace Hangul.}%
+}

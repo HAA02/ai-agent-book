@@ -13,6 +13,7 @@ on:
       - 'book-zhtw/**'
       - 'book-en/**'
       - 'book-ta/**'
+      - 'book-ko/**'
       - 'book-vi/**'
       - 'build_epub.sh'
       - 'epub.css'
@@ -58,7 +59,7 @@ jobs:
           PANGOCAIRO_BACKEND: fontconfig
         run: |
           set -e
-          for dir in book book-zhtw book-en book-vi book-ta; do
+          for dir in book book-zhtw book-en book-vi book-ta book-ko; do
             (cd "$dir" && bash build_pdf.sh)
           done
 
@@ -81,10 +82,12 @@ jobs:
           cp "book-zhtw/深入理解-AI-Agent-李博杰-v1.2-zhtw.pdf"   "$out/AI-Agents-in-Depth-zh-TW.pdf"
           cp book-en/AI-Agents-in-Depth-Bojie-Li-v1.2.pdf        "$out/AI-Agents-in-Depth-en.pdf"
           cp book-ta/AI-Agents-in-Depth-Bojie-Li-v1.2-ta.pdf     "$out/AI-Agents-in-Depth-ta.pdf"
+          cp book-ko/AI-Agents-in-Depth-Bojie-Li-v1.2-ko.pdf     "$out/AI-Agents-in-Depth-ko.pdf"
           cp book-vi/AI-Agents-in-Depth-Bojie-Li-v1.2-vi.pdf     "$out/AI-Agents-in-Depth-vi.pdf"
           cp "book/深入理解-AI-Agent-李博杰-v1.2.epub"             "$out/AI-Agents-in-Depth-zh-CN.epub"
           cp "book-zhtw/深入理解-AI-Agent-李博杰-v1.2-zhtw.epub"   "$out/AI-Agents-in-Depth-zh-TW.epub"
           cp book-en/AI-Agents-in-Depth-Bojie-Li-v1.2.epub       "$out/AI-Agents-in-Depth-en.epub"
           cp book-ta/AI-Agents-in-Depth-Bojie-Li-v1.2-ta.epub    "$out/AI-Agents-in-Depth-ta.epub"
+          cp book-ko/AI-Agents-in-Depth-Bojie-Li-v1.2-ko.epub    "$out/AI-Agents-in-Depth-ko.epub"
           cp book-vi/AI-Agents-in-Depth-Bojie-Li-v1.2-vi.epub    "$out/AI-Agents-in-Depth-vi.epub"
           gh release upload latest "$out"/* --clobber --repo "${{ github.repository }}"

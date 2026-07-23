@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Build EPUB 3 editions from the Markdown sources.
-# Usage: ./build_epub.sh [all|zh-CN|zh-TW|en|ta|vi]
+# Usage: ./build_epub.sh [all|zh-CN|zh-TW|en|ta|ko|vi]
 
 set -euo pipefail
 
@@ -15,9 +15,9 @@ for command in pandoc pdftoppm python3; do
 done
 
 case "$SELECTION" in
-    all|zh-CN|zh-TW|en|ta|vi) ;;
+    all|zh-CN|zh-TW|en|ta|ko|vi) ;;
     *)
-        echo "Usage: $0 [all|zh-CN|zh-TW|en|ta|vi]" >&2
+        echo "Usage: $0 [all|zh-CN|zh-TW|en|ta|ko|vi]" >&2
         exit 2
         ;;
 esac
@@ -70,6 +70,16 @@ build_edition() {
             title_label="தலைப்புப் பக்கம்"
             toc_label="பொருளடக்கம்"
             chapters=(introduction.ta.md chapter{1..10}.ta.md afterword.ta.md)
+            ;;
+        ko)
+            directory="book-ko"
+            title="AI 에이전트 심층 분석: 설계 원리와 엔지니어링 실전"
+            author="Bojie Li; 한국어 번역: kotrans"
+            pdf="AI-Agents-in-Depth-Bojie-Li-v1.2-ko.pdf"
+            output="AI-Agents-in-Depth-Bojie-Li-v1.2-ko.epub"
+            title_label="표제지"
+            toc_label="목차"
+            chapters=(introduction.ko.md chapter{1..10}.ko.md afterword.ko.md)
             ;;
         vi)
             directory="book-vi"
